@@ -1,0 +1,18 @@
+<%- include('partials/header'); -%>
+
+    <main class="result">
+        <% for(let i=0; i<cowin.sessions.length; i++) { %>
+            <h1><%= cowin.sessions[i].name %></h1>
+            <p>Address: <%= cowin.sessions[i].address %></p>
+            <p>Vaccine Type: <%= cowin.sessions[i].vaccine %></p>
+            <p>Fee: <%= cowin.sessions[i].fee_type %></p>
+            <p>Date: <%= cowin.sessions[i].date %></p>
+            <p>Time: <%= cowin.sessions[i].from %> - <%= cowin.sessions[i].to %></p>
+            <p>Availability for DOSE-1: <%= cowin.sessions[i].available_capacity_dose1 %></p>
+            <p>Availability for DOSE-2: <%= cowin.sessions[i].available_capacity_dose2 %></p>
+            <p>Min Age Limit: <%= cowin.sessions[i].min_age_limit %></p>
+            <hr>
+        <% } %>
+    </main>
+
+<%- include('partials/footer'); -%>
