@@ -1,29 +1,8 @@
-.home {
-    position: relative;
-    top: 20rem;
+.home, .result {
+    padding: 10rem 2rem 3rem;
+    background-color:ghostwhite;
 }
 
-.result {
-    position: relative;
-    top: 5rem;
-    text-align: center;
-}
-
-.result h1 {
-    font-size: 1.5em;
-    text-decoration: underline;
-}
-
-.result p {
-    font-size: 1.2em;
-    color: teal;
-}
-
-.result hr {
-    width: 20%;
-    border-style: dotted none none none;
-    border-width: 5px;
-    border-color: #7e8686;
-    margin-top: 15px;
-    margin-bottom: 15px;
+.spacing {
+    padding: 3rem;
 }

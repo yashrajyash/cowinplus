@@ -10,4 +10,4 @@
 4. Hit cmd `node app.js` to open localhost server at http://localhost:3000
 
 #### Output
-![output](output.gif)
+![output](public/images/output.gif)

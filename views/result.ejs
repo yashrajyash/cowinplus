@@ -1,18 +1,31 @@
 <%- include('partials/header'); -%>
 
     <main class="result">
-        <% for(let i=0; i<cowin.sessions.length; i++) { %>
-            <h1><%= cowin.sessions[i].name %></h1>
-            <p>Address: <%= cowin.sessions[i].address %></p>
-            <p>Vaccine Type: <%= cowin.sessions[i].vaccine %></p>
-            <p>Fee: <%= cowin.sessions[i].fee_type %></p>
-            <p>Date: <%= cowin.sessions[i].date %></p>
-            <p>Time: <%= cowin.sessions[i].from %> - <%= cowin.sessions[i].to %></p>
-            <p>Availability for DOSE-1: <%= cowin.sessions[i].available_capacity_dose1 %></p>
-            <p>Availability for DOSE-2: <%= cowin.sessions[i].available_capacity_dose2 %></p>
-            <p>Min Age Limit: <%= cowin.sessions[i].min_age_limit %></p>
-            <hr>
-        <% } %>
+        <div class="container-fluid">
+            <% if(cowin.sessions.length === 0) { %>
+                <h1>No Center Available!</h1>
+            <% } else { %>
+                <h1>Total <%= cowin.sessions.length %> center found!</h1>
+                <div class="panel panel-success">
+                    <% for(let i=0; i<cowin.sessions.length; i++) { %>
+                        <div class="panel-heading">
+                            <%= cowin.sessions[i].name %>
+                        </div>
+                        <div class="panel-body">
+                            <p>Vaccine Type: <%= cowin.sessions[i].vaccine %></p>
+                            <p>Fee: <%= cowin.sessions[i].fee_type %></p>
+                            <p>Date: <%= cowin.sessions[i].date %></p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Address: <%= cowin.sessions[i].address %></li>
+                                <li class="list-group-item">Time: <%= cowin.sessions[i].from %> - <%= cowin.sessions[i].to %></li>
+                                <li class="list-group-item">Availability for DOSE-1: <%= cowin.sessions[i].available_capacity_dose1 %></li>
+                                <li class="list-group-item">Availability for DOSE-2: <%= cowin.sessions[i].available_capacity_dose2 %></li>
+                            </ul>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+          </div>
     </main>
 
 <%- include('partials/footer'); -%>
